@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/example?serverTimezone=UTC
+    password: 123456
+    username: root
+  batch:
+    job:
+      enabled: true
+
+mybatis:
+    mapper-locations: testMapping.xml
+

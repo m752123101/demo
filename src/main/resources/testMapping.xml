@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapping.TestMapping">
+    <resultMap id="BaseMap" type="com.example.demo.mapping.bean.Test">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <result column="test_string" property="testString"></result>
+        <result column="test_int" property="testInt"></result>
+    </resultMap>
+    <select id="selectTest" resultMap="BaseMap">
+        select * from test where id = 1
+    </select>
+</mapper>
