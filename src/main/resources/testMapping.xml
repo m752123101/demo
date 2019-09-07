@@ -9,4 +9,5 @@
     <select id="selectTest" resultMap="BaseMap">
         select * from test where id = 1
     </select>
+
 </mapper>

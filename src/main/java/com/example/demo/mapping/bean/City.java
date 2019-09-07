@@ -7,7 +7,6 @@ package com.example.demo.mapping.bean;
  * @date 2019/9/3 19:10
  * @Description auto
  */
-
 public class City {
     //  `ID` int(11) NOT NULL AUTO_INCREMENT,
     //  `Name` char(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',

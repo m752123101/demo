@@ -8,7 +8,7 @@ import org.springframework.batch.core.job.flow.JobExecutionDecider;
 import java.util.Date;
 
 /**
- * TODO
+ * 读取数据库-》输出控制台
  *
  * @author hanwen.dong
  * @date 2019/9/7 16:23

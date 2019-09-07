@@ -4,6 +4,7 @@ import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobExecutionListener;
 
 import javax.batch.api.listener.JobListener;
+import java.text.SimpleDateFormat;
 
 /**
  * job 监听器
@@ -18,12 +19,18 @@ public class JobListenner implements JobExecutionListener {
 
     @Override
     public void beforeJob(JobExecution jobExecution) {
+        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+        dateFormat.format(        jobExecution.getStartTime());
         System.out.println("job listener  start ");
+        System.out.println(dateFormat.toString());
 
     }
 
     @Override
     public void afterJob(JobExecution jobExecution) {
+        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+        dateFormat.format(        jobExecution.getStartTime());
+        System.out.println(dateFormat.toString());
         System.out.println("job listener  end ");
 
     }
