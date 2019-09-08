@@ -1,6 +1,6 @@
 package com.example.demo.batch.helloworld.filetoout;
 
-import com.example.demo.batch.helloworld.listenner.JobListenner;
+import com.example.demo.batch.helloworld.listenner.CommonListenner;
 import com.example.demo.mapping.Citydao;
 import com.example.demo.mapping.bean.City;
 import org.springframework.batch.core.Job;
@@ -41,8 +41,8 @@ public class FileToOutJobConfig {
     private Citydao citydao;
 
     @Bean
-    public Job fileToOutjob3(){
-        return jobBuilderFactory.get("dbToOutJob3").listener(new JobListenner())
+    public Job fileToOutjob5(){
+        return jobBuilderFactory.get("fileToOutjob5").listener(new CommonListenner())
                 .start(fileToOutStep())
                 .build();
 
@@ -59,24 +59,19 @@ public class FileToOutJobConfig {
                         System.out.println("=============processor=============s");
                         return item;
                     }
-                }).writer(fileToOutWriter()).build();
-    }
-    @Bean
-    @StepScope
-    public ItemWriter<? super City> fileToOutWriter() {
-        return new ItemWriter<City>() {
-            @Override
-            public void write(List<? extends City> items) throws Exception {
-                items.forEach(t ->{
-                    System.out.println("wrting ....");
-                    citydao.insert(t);
-                });
-            }
-        };
+                }).writer(new ItemWriter<City>() {
+                    @Override
+                    public void write(List<? extends City> items) throws Exception {
+                        items.forEach(t ->{
+                            System.out.println("wrting ....");
+                            citydao.insert(t);
+                        });
+                    }
+                }).build();
     }
 
-@Bean
-@StepScope
+    @Bean
+    @StepScope
     public FlatFileItemReader<City> fileToOutReader() {
         FlatFileItemReader<City> flatFileItemReader=new FlatFileItemReader<>();
         //设置文件
@@ -102,7 +97,7 @@ public class FileToOutJobConfig {
                 return city;
             }
         });
-    flatFileItemReader.setLineMapper(defaultLineMapper);
+        flatFileItemReader.setLineMapper(defaultLineMapper);
         return flatFileItemReader;
     }
 }

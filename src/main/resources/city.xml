@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<citys>
+    <city>
+        <id>1</id>
+        <name>河南</name>
+        <countryCode>1</countryCode>
+        <district>asia</district>
+        <population>200000000</population>
+    </city>
+    <city>
+        <id>2</id>
+        <name>河北</name>
+        <countryCode>1</countryCode>
+        <district>asia</district>
+        <population>200000000</population>
+    </city>
+</citys>

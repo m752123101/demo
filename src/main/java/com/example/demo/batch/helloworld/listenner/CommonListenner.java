@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  * @Description auto
  */
 
-public class JobListenner implements JobExecutionListener {
+public class CommonListenner implements JobExecutionListener {
 
 
     @Override

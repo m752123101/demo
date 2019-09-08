@@ -1,7 +1,7 @@
 package com.example.demo.batch.helloworld;
 
 import com.example.demo.batch.helloworld.listenner.ChunkListener;
-import com.example.demo.batch.helloworld.listenner.JobListenner;
+import com.example.demo.batch.helloworld.listenner.CommonListenner;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -32,7 +32,7 @@ public class TestListenerConfig {
 
     @Bean
     public Job testListenerJob() {
-        return jobBuilderFactory.get("testListenerJob1").listener(new JobListenner()).start(testListenerStep()).build();
+        return jobBuilderFactory.get("testListenerJob1").listener(new CommonListenner()).start(testListenerStep()).build();
     }
 
     @Bean

@@ -4077,4 +4077,3 @@
 "4077","Jabaliya","PSE","North Gaza","113901"
 "4078","Nablus","PSE","Nablus","100231"
 "4079","Rafah","PSE","Rafah","92020"
-"4082","henan","998","cxx","1"

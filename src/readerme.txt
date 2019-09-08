@@ -1,0 +1,14 @@
+建表语句
+CREATE TABLE `city` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` char(35) NOT NULL DEFAULT '',
+  `CountryCode` char(3) NOT NULL DEFAULT '',
+  `District` char(20) NOT NULL DEFAULT '',
+  `Population` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+mysql时区问题：
+Err : The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You mu
+ ok   ：jdbc:mysql://localhost:3306/example?serverTimezone=UTC
+

@@ -1,4 +1,0 @@
-mysql时区问题：
-Err : The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You mu
- ok   ：jdbc:mysql://localhost:3306/example?serverTimezone=UTC
-
