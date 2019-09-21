@@ -1,5 +1,6 @@
 package com.example.demo.batch.helloworld.xml2out;
 
+import com.example.demo.batch.ConstantEnum;
 import com.example.demo.batch.helloworld.listenner.CommonListenner;
 import com.example.demo.mapping.Citydao;
 import com.example.demo.mapping.bean.City;
@@ -50,7 +51,7 @@ public class Xml2OutJobConfig {
     @Bean
     public Step xml2OutStep() {
         return stepBuilderFactory.get("xml2OutStep")
-                .<City, City>chunk(2)
+                .<City, City>chunk(ConstantEnum.less.getChunkValue())
                 .reader(xml2outReader())
                 .processor(new ItemProcessor<City, City>() {
                     @Override
@@ -60,6 +61,7 @@ public class Xml2OutJobConfig {
                         System.out.println("city"+item.toString());
                         return item;
                     }
+
                 }).writer(new ItemWriter<City>() {
                     @Override
                     public void write(List<? extends City> items) throws Exception {
